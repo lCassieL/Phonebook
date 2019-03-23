@@ -2,11 +2,14 @@
 
 class MainModel extends Model{
     public function getUsers(){
-        return array(
-            array(
-                'name'=>'Denys',
-                'phone'=>'0504356777',
-            ),
-        );
+        if($this->db->connect_errno===0){
+            $query = 'select * from contacts';
+            $res = $this->db->query($query);
+            if($res){
+                return $res->fetch_all(MYSQLI_ASSOC);
+            } else{
+                return false;
+            }
+        }
     }
 }

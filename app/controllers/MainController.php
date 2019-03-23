@@ -6,4 +6,9 @@ class MainController extends Controller{
         $this->view->page = 'page_main_index_view';
         $this->view->render();
     }
+
+    public function action_login(){
+        $this->view->page = 'page_main_login_view';
+        $this->view->render();
+    }
 }

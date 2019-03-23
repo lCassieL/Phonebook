@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+.grid{
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+}
+ul{
+    list-style: none;
+}
+
+header{
+    background: lightskyblue;
+}
+.container{
+    padding: 50px 20%;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    background: steelblue;
+}
+.content{
+    background: white;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 20% 20%;
+    grid-column-gap: 10px;
+}
+
+nav ul>li>a{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    background: midnightblue;
+    color:white;
+    height: 100%;
+}
+
+
+

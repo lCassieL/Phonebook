@@ -6,8 +6,10 @@
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+    <div class="grid">
     <?php
         include_once 'app/views/'.$this->page.'.php'; 
     ?>
+    </div>
 </body>
 </html>
