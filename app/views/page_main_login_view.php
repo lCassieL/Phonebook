@@ -2,8 +2,8 @@
 <div class="container">
 <nav>
     <ul>
-        <li><a href="#">Public phonebook</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="/main/index">Public phonebook</a></li>
+        <li><a href="/main/login">Login</a></li>
     </ul>
 </nav>
 <div class="content">
