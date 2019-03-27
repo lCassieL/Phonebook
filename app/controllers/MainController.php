@@ -15,7 +15,22 @@ class MainController extends Controller{
     }
 
     public function action_mycontact(){
-        $this->view->page = 'page_main_mycontact_view';
-        $this->view->render();
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            var_dump($_POST);
+            exit();
+            $this->action_save();
+        } else{
+            $this->model = new MainModel();
+            $this->view->user = $this->model->getUser(2);
+            $this->view->email = $this->model->getEmail(2);
+            $this->view->phone = $this->model->getPhone(2);
+            $this->view->page = 'page_main_mycontact_view';
+            $this->view->render();
+        }
+    }
+
+    public function action_save(){
+        var_dump('it is save action!!!');
+        exit();
     }
 }

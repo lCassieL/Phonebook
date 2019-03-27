@@ -20,21 +20,21 @@
     <div class="emails">
     <h5>EMAILS</h5>
     <?php foreach($this->emails as $email){
-        if($user['id'] == $email['contact_id']){?>
-            <span><?= $email['name'] ?></span>
-        <?php }?>
-    <?php }?>
-    <?php endforeach;?>
+        if($user['id'] == $email['contact_id']){ ?>
+            <span><?= $email['email'] ?></span>
+        <?php } ?>
+    <?php } ?>
     </div>
 
     <div class="phones">
     <h5>PHONE NUMBERS</h5>
     <?php foreach($this->phones as $phone){
         if($user['id'] == $phone['contact_id']){?>
-            <span><?= $phone['number'] ?></span>
-        <?php }?>
-    <?php }?>
-    <?php endforeach;?>
+            <span><?= $phone['phone'] ?></span>
+        <?php } ?>
+    <?php } ?>
     </div>
+    <?php endforeach;?>
+    
 </div>
 </div>
