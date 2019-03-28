@@ -7,20 +7,20 @@
     </ul>
 </nav>
 <div class="content">
-    <?php foreach($this->users as $user) :?>
-    <h2><?= $user['name'].' '.$user['surname']?></h2>
+    <?php foreach($this->contacts as $contact) :?>
+    <h2><?= $contact['name'].' '.$contact['surname']?></h2>
     <a href="#">View details</a>
     <div class="address">
         <h5>ADDRESS</h5>
-        <span><?= $user['address'] ?></span>
-        <span><?= $user['city'] ?></span>
-        <span><?= $user['country'] ?></span>
+        <span><?= $contact['address'] ?></span>
+        <span><?= $contact['city'] ?></span>
+        <span><?= $contact['country'] ?></span>
     </div>
 
     <div class="emails">
     <h5>EMAILS</h5>
     <?php foreach($this->emails as $email){
-        if($user['id'] == $email['contact_id']){ ?>
+        if($contact['id'] == $email['contact_id']){ ?>
             <span><?= $email['email'] ?></span>
         <?php } ?>
     <?php } ?>
@@ -29,7 +29,7 @@
     <div class="phones">
     <h5>PHONE NUMBERS</h5>
     <?php foreach($this->phones as $phone){
-        if($user['id'] == $phone['contact_id']){?>
+        if($contact['id'] == $phone['contact_id']){?>
             <span><?= $phone['phone'] ?></span>
         <?php } ?>
     <?php } ?>

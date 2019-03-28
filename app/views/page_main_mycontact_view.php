@@ -12,38 +12,50 @@
 </nav>
 <div class="content">
     <form method="post">
+        <input type="hidden" name="id" value="<?= $this->contact[0]['id']?>">
         <label>CONTACT</label>
         <div>
             <label>First name</label>
-            <input type="text" name="name" value="<?= $this->user[0]['name']?>">
+            <input type="text" name="name" value="<?= $this->contact[0]['name']?>">
         </div>
         <div>
             <label>Last name</label>
-            <input type="text" name="l_name" value="<?= $this->user[0]['surname']?>">
+            <input type="text" name="l_name" value="<?= $this->contact[0]['surname']?>">
         </div>
         <div>
             <label>Address</label>
-            <input type="text" name="address" value="<?= $this->user[0]['address']?>">
+            <input type="text" name="address" value="<?= $this->contact[0]['address']?>">
         </div>
         <div>
             <label>ZIP City</label>
-            <input type="text" name="city" value="<?= $this->user[0]['city']?>">
+            <input type="text" name="city" value="<?= $this->contact[0]['city']?>">
         </div>
+
         <div>
             <label>Country</label>
-            <select><?= $this->user[0]['country']?>"</select>
+            <select name="country">
+            <?php foreach($this->countries as $country){ ?>
+            <option>
+                <?= $country['name']?>
+            </option>
+            <?php }?>
+            </select>
         </div>
         <label>PHONE NUMBERS<label>
-        <?php foreach($this->phone as $phone_item){ ?>
+        <?php
+        $pcount=0; 
+        foreach($this->phone as $phone_item){ ?>
         <div>
             <?php if($phone_item['publish'] === 'yes'){ ?>
-            <input type="checkbox" name="Publish field" checked>
+            <input type="checkbox" name="_pubp<?= $pcount?>" value="yes" checked>
             <?php } else{ ?>
-            <input type="checkbox" name="Publish field">
+            <input type="checkbox" name="_pubp<?= $pcount ?>" value="yes">
             <?php }?>
-            <input type="text" name="phone" value="<?= $phone_item['phone'] ?>">
+            <input type="text" name="p<?= $pcount?>" value="<?= $phone_item['phone'] ?>">
         </div>
-        <?php }?>
+        <?php
+        $pcount++; 
+        }?>
         <div>
             <input type="checkbox" name="Publish field" disabled>
             <input type="text" name="phone" disabled>
@@ -52,17 +64,21 @@
             <a href="#">+Add</a>
         </div>
         <label>EMAILS</label>
-        <?php foreach($this->email as $email_item){ ?>
+        <?php 
+        $ecount=0;
+        foreach($this->email as $email_item){ ?>
         <div>
             <?php if($email_item['publish'] === 'yes'){ ?>
-            <input type="checkbox" name="Publish field" checked>
+            <input type="checkbox" name="_pube<?= $ecount ?>" value="yes" checked>
             <?php } else{ ?>
-            <input type="checkbox" name="Publish field">
+            <input type="checkbox" name="_pube<?= $ecount ?>" value="yes">
             <?php }?>
 
-            <input type="text" name="email" value="<?= $email_item['email'] ?>">
+            <input type="text" name="e<?= $ecount?>" value="<?= $email_item['email'] ?>">
         </div>
-        <?php } ?>
+        <?php 
+        $ecount++;
+        } ?>
         <div>
             <input type="checkbox" name="Publish field" disabled>
             <input type="text" name="email" disabled>
