@@ -10,6 +10,25 @@ class MainController extends Controller{
     }
 
     public function action_login(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $action = filter_input(INPUT_POST, 'action');
+            if($action === 'login'){
+                $login = filter_input(INPUT_POST, 'login');
+                $password = filter_input(INPUT_POST, 'password');
+                $this->model = new MainModel();
+                $users = $this->model->getUsers();
+                foreach($users as $user){
+                    if($user['login'] === $login && $user['password'] === $password){
+                        $_SESSION['login'] = $user['login'];
+                        $_SESSION['id'] = $user['contact_id'];
+                        break;
+                    }
+                }
+                if($_SESSION['login']){
+                    header('Location: ' . '/main/mycontact');
+                }
+            }
+        }
         $this->view->page = 'page_main_login_view';
         $this->view->render();
     }
@@ -60,17 +79,13 @@ class MainController extends Controller{
             }
         } else{
             $this->model = new MainModel();
-            $this->view->contact = $this->model->getContact(2);
-            $this->view->email = $this->model->getEmail(2);
-            $this->view->phone = $this->model->getPhone(2);
+            $this->view->contact = $this->model->getContact(+$_SESSION['id']);
+            $this->view->email = $this->model->getEmail(+$_SESSION['id']);
+            $this->view->phone = $this->model->getPhone(+$_SESSION['id']);
             $this->view->countries = $this->model->getCountries();
             $this->view->page = 'page_main_mycontact_view';
             $this->view->render();
         }
     }
 
-    public function action_save(){
-        // var_dump('it is save action!!!');
-        // exit();
-    }
 }

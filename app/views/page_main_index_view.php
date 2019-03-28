@@ -1,9 +1,22 @@
-<header>Phonebook</header>
+<header>Phonebook
+    <?php if($_SESSION['login']){ ?>
+    <form method="post">
+        <input type="hidden" name="action" value="logout">
+        <input type="submit" value="logout">
+    </form>
+    <?php } ?>
+</header>
 <div class="container">
 <nav>
     <ul>
         <li><a href="/main/index">Public phonebook</a></li>
-        <li><a href="/main/login">Login</a></li>
+        <li>
+            <?php if(!$_SESSION['login']){ ?>
+            <a href="/main/login">Login</a>
+            <?php } else{ ?>
+            <a href="/main/mycontact">My contact</a>
+            <?php } ?>
+        </li>
     </ul>
 </nav>
 <div class="content">

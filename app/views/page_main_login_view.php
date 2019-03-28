@@ -12,6 +12,7 @@
     <input type="text" name="login">
     <label>PASSWORD</label>
     <input type="password" name="password">
+    <input type="hidden" name="action" value="login">
     <input type="submit" value="LOGIN">
 </form>    
 </div>

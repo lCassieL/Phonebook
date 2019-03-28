@@ -96,6 +96,18 @@ class MainModel extends Model{
         }
     }
 
+    public function getUsers(){
+        if($this->db->connect_errno === 0){
+            $query = 'select * from users';
+            $res = $this->db->query($query);
+            if($res){
+                return $res->fetch_all(MYSQLI_ASSOC);
+            } else{
+                return false;
+            }
+        }
+    }
+
     public function updateContact($id, $name, $surname, $address, $city, $country_id){
         if($this->db->connect_errno === 0){
             $query = 'update contacts set name="'.$name.'", surname="'.$surname.'", address="'.$address.'", city="'.$city.'", country_id ='.$country_id.' where contacts.id ='.$id;

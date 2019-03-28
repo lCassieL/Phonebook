@@ -1,6 +1,7 @@
 <header>Phonebook
     <form method="post">
-        <input type="submit" name="logout">
+        <input type="hidden" name="action" value="logout">
+        <input type="submit" value="logout">
     </form>
 </header>
 <div class="container">
