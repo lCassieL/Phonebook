@@ -90,6 +90,7 @@
         <div>
             <label>* Fields are mandatory</label>
             <input type="checkbox" name="Publish my contact">
+            <input type="hidden" name="action" value="save">
             <input type="submit" value="save">
         </div>
 
