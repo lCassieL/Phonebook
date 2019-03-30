@@ -20,7 +20,7 @@
     </ul>
 </nav>
 <div class="content">
-    <?php foreach($this->contacts as $contact) :?>
+    <?php foreach($this->contacts as $contact){?>
     <h2><?= $contact['name'].' '.$contact['surname']?></h2>
     <a href="#">View details</a>
     <div class="address">
@@ -42,12 +42,12 @@
     <div class="phones">
     <h5>PHONE NUMBERS</h5>
     <?php foreach($this->phones as $phone){
-        if($contact['id'] == $phone['contact_id']){?>
+        if($contact['id'] == $phone['contact_id']){ ?>
             <span><?= $phone['phone'] ?></span>
         <?php } ?>
     <?php } ?>
     </div>
-    <?php endforeach;?>
+    <?php } ?>
     
 </div>
 </div>

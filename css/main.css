@@ -45,5 +45,12 @@ nav ul>li>a{
     height: 100%;
 }
 
+.mycontact{
+    /*border: 1px solid red;*/
+    display: grid;
+    /*grid-template-rows:  200px 200px 200px;*/
+    grid-template-columns: 1fr 1fr 1fr;
+    /*height: 100vh;*/
+}
 
 

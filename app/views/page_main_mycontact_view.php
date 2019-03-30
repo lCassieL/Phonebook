@@ -12,8 +12,9 @@
     </ul>
 </nav>
 <div class="content">
-    <form method="post">
+    <form method="post" class="mycontact">
         <input type="hidden" name="id" value="<?= $this->contact[0]['id']?>">
+        <div>
         <label>CONTACT</label>
         <div>
             <label>First name</label>
@@ -42,6 +43,8 @@
             <?php }?>
             </select>
         </div>
+        </div>
+        <div>        
         <label>PHONE NUMBERS<label>
         <?php
         $pcount=0; 
@@ -64,6 +67,8 @@
         <div>
             <a href="#">+Add</a>
         </div>
+        </div>
+        <div>
         <label>EMAILS</label>
         <?php 
         $ecount=0;
@@ -87,6 +92,7 @@
         <div>
             <a href="#">+Add</a>
         </div>
+        <div>
         <div>
             <label>* Fields are mandatory</label>
             <input type="checkbox" name="Publish my contact">

@@ -5,6 +5,4 @@
     include_once 'core/Model.php';
     include_once 'core/Router.php';
     session_start();
-    // $_SESSION['login'] = 'den';
-    // session_destroy();
     router::init();
