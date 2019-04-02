@@ -11,5 +11,6 @@
         include_once 'app/views/'.$this->page.'.php'; 
     ?>
     </div>
+    <script src="/js/main.js"></script>
 </body>
 </html>

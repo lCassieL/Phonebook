@@ -3,7 +3,7 @@
 class MainModel extends Model{
     public function getContacts(){
         if($this->db->connect_errno===0){
-            $query = 'select contacts.id, contacts.name, contacts.surname, contacts.address, contacts.city , countries.name as country from contacts left outer join countries on contacts.country_id = countries.id';
+            $query = 'select contacts.id, contacts.name, contacts.surname, contacts.address, contacts.city, contacts.publish , countries.name as country from contacts left outer join countries on contacts.country_id = countries.id';
             $res = $this->db->query($query);
             if($res){
                 return $res->fetch_all(MYSQLI_ASSOC);

@@ -44,58 +44,62 @@
             </select>
         </div>
         </div>
-        <div>        
-        <label>PHONE NUMBERS<label>
-        <?php
-        $pcount=0; 
-        foreach($this->phone as $phone_item){ ?>
-        <div>
-            <?php if($phone_item['publish'] === 'yes'){ ?>
-            <input type="checkbox" name="_pubp<?= $pcount?>" value="yes" checked>
-            <?php } else{ ?>
-            <input type="checkbox" name="_pubp<?= $pcount ?>" value="yes">
-            <?php }?>
-            <input type="text" name="p<?= $pcount?>" value="<?= $phone_item['phone'] ?>">
+        <div id="phones">        
+            <label>PHONE NUMBERS</label>
+            <?php
+            $pcount=0; 
+            foreach($this->phone as $phone_item){ ?>
+            <div class="phoneItem">
+                <?php if($phone_item['publish'] === 'yes'){ ?>
+                <input type="checkbox" name="_pubp<?= $pcount?>" value="yes" checked>
+                <?php } else{ ?>
+                <input type="checkbox" name="_pubp<?= $pcount ?>" value="yes">
+                <?php }?>
+                <input type="text" name="p<?= $pcount?>" value="<?= $phone_item['phone'] ?>">
+            </div>
+            <?php
+            $pcount++; 
+            }?>
+            <div id="disablePhone">
+                <input type="checkbox"  disabled>
+                <input type="text" name="phone" disabled>
+                <input type="hidden" id="pcount" value="<?= $pcount++?>">
+            </div>
+            <div>
+                <a href="#" id="addPhoneInput" onclick="addPhoneField()">+Add</a>
+            </div>
         </div>
-        <?php
-        $pcount++; 
-        }?>
-        <div>
-            <input type="checkbox" name="Publish field" disabled>
-            <input type="text" name="phone" disabled>
-        </div>
-        <div>
-            <a href="#">+Add</a>
-        </div>
-        </div>
-        <div>
-        <label>EMAILS</label>
-        <?php 
-        $ecount=0;
-        foreach($this->email as $email_item){ ?>
-        <div>
-            <?php if($email_item['publish'] === 'yes'){ ?>
-            <input type="checkbox" name="_pube<?= $ecount ?>" value="yes" checked>
-            <?php } else{ ?>
-            <input type="checkbox" name="_pube<?= $ecount ?>" value="yes">
-            <?php }?>
 
-            <input type="text" name="e<?= $ecount?>" value="<?= $email_item['email'] ?>">
+        <div id="emails">
+            <label>EMAILS</label>
+            <?php 
+            $ecount=0;
+            foreach($this->email as $email_item){ ?>
+            <div>
+                <?php if($email_item['publish'] === 'yes'){ ?>
+                <input type="checkbox" name="_pube<?= $ecount ?>" value="yes" checked>
+                <?php } else{ ?>
+                <input type="checkbox" name="_pube<?= $ecount ?>" value="yes">
+                <?php }?>
+                <input type="text" name="e<?= $ecount?>" value="<?= $email_item['email'] ?>">
+            </div>
+            <?php 
+            $ecount++;
+            } ?>
+            <div id="disableEmail">
+                <input type="checkbox" disabled>
+                <input type="text" name="email" disabled>
+                <input type="hidden" id="ecount" value="<?= $ecount++?>">
+            </div>
+            <div>
+                <a href="#" id="addEmailInput" onclick="addEmailField()">+Add</a>
+            </div>
         </div>
-        <?php 
-        $ecount++;
-        } ?>
-        <div>
-            <input type="checkbox" name="Publish field" disabled>
-            <input type="text" name="email" disabled>
-        </div>
-        <div>
-            <a href="#">+Add</a>
-        </div>
-        <div>
+
         <div>
             <label>* Fields are mandatory</label>
-            <input type="checkbox" name="Publish my contact">
+            <input type="checkbox" name="cPub">
+            <label>Publish my contact</label>
             <input type="hidden" name="action" value="save">
             <input type="submit" value="save">
         </div>
