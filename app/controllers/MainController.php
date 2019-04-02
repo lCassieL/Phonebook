@@ -65,12 +65,17 @@ class MainController extends Controller{
                 $address = filter_input(INPUT_POST, 'address');
                 $city = filter_input(INPUT_POST, 'city');
                 $country = filter_input(INPUT_POST, 'country');
+                $contactPublish = filter_input(INPUT_POST, 'cPub');
 
+                if($contactPublish !== 'yes'){
+                    $contactPublish = 'no';
+                }
+                
                 $this->model = new MainModel();
                 $mas_country_id = $this->model->getCountryId($country);
                 $country_id = $mas_country_id[0]['id'];
             
-                $this->model->updateContact($id, $name, $surname, $address, $city, $country_id);
+                $this->model->updateContact($id, $name, $surname, $address, $city, $country_id, $contactPublish);
                 $this->model->deletePhonesByCountryId($id);
 
                 foreach($phones as $key=>$phone){

@@ -98,7 +98,7 @@
 
         <div>
             <label>* Fields are mandatory</label>
-            <input type="checkbox" name="cPub">
+            <input type="checkbox" name="cPub" value="yes" checked>
             <label>Publish my contact</label>
             <input type="hidden" name="action" value="save">
             <input type="submit" value="save">

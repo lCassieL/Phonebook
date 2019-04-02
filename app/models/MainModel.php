@@ -108,9 +108,9 @@ class MainModel extends Model{
         }
     }
 
-    public function updateContact($id, $name, $surname, $address, $city, $country_id){
+    public function updateContact($id, $name, $surname, $address, $city, $country_id, $contactPublish){
         if($this->db->connect_errno === 0){
-            $query = 'update contacts set name="'.$name.'", surname="'.$surname.'", address="'.$address.'", city="'.$city.'", country_id ='.$country_id.' where contacts.id ='.$id;
+            $query = 'update contacts set name="'.$name.'", surname="'.$surname.'", address="'.$address.'", city="'.$city.'", publish="'.$contactPublish.'", country_id ='.$country_id.' where contacts.id ='.$id;
             $this->db->query($query);
         }
     }
