@@ -1,9 +1,9 @@
-<header>Phonebook</header>
+<header><h2>Phonebook</h2></header>
 <div class="container">
 <nav>
     <ul>
-        <li><a href="/main/index">Public phonebook</a></li>
-        <li><a href="/main/login">Login</a></li>
+        <li><a href="/main/index" class="usualButton">Public phonebook</a></li>
+        <li><a href="/main/login" class="activeButton">Login</a></li>
     </ul>
 </nav>
 <div class="content">

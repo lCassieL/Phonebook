@@ -1,4 +1,4 @@
-<header>Phonebook
+<header><h2>Phonebook</h2>
     <form method="post">
         <input type="hidden" name="action" value="logout">
         <input type="submit" value="logout">
@@ -7,8 +7,8 @@
 <div class="container">
 <nav>
     <ul>
-        <li><a href="/main/index">Public phonebook</a></li>
-        <li><a href="/main/mycontact">My contact</a></li>
+        <li><a href="/main/index" class="usualButton">Public phonebook</a></li>
+        <li><a href="/main/mycontact" class="activeButton">My contact</a></li>
     </ul>
 </nav>
 <div class="content">

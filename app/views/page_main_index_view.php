@@ -1,4 +1,4 @@
-<header>Phonebook
+<header><h2>Phonebook</h2>
     <?php if($_SESSION['login']){ ?>
     <form method="post">
         <input type="hidden" name="action" value="logout">
@@ -9,12 +9,12 @@
 <div class="container">
 <nav>
     <ul>
-        <li><a href="/main/index">Public phonebook</a></li>
+        <li><a href="/main/index" class="activeButton">Public phonebook</a></li>
         <li>
             <?php if(!$_SESSION['login']){ ?>
-            <a href="/main/login">Login</a>
+            <a href="/main/login" class="usualButton">Login</a>
             <?php } else{ ?>
-            <a href="/main/mycontact">My contact</a>
+            <a href="/main/mycontact" class="usualButton">My contact</a>
             <?php } ?>
         </li>
     </ul>
