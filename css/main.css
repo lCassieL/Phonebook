@@ -24,6 +24,7 @@ header{
 }
 .content{
     background: white;
+    padding: 20px;
 }
 
 nav ul{
@@ -74,11 +75,14 @@ nav ul>li>a{
 .userFullName{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid grey;
+
 }
 
 .userFullName a{
-    border: 1px solid red;
-    padding:0;
+    display:grid;
+    align-content: center;
+    justify-content: center;
 }
 
 

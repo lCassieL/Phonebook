@@ -19,6 +19,7 @@
         </li>
     </ul>
 </nav>
+<!-- <div class="wrapContent"> -->
 <div class="content">
     <?php
     $ccount = 0; 
@@ -61,5 +62,6 @@
     $ccount++;
     } ?>
 </div>
+<!-- </div> -->
 
 </div>
