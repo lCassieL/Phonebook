@@ -53,4 +53,33 @@ nav ul>li>a{
     /*height: 100vh;*/
 }
 
+.userInformDisplayNone{
+    display: none;
+}
+
+.userInform{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.address, .emails, .phones{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.userInform h5{
+    color: gold;
+}
+
+.userFullName{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.userFullName a{
+    border: 1px solid red;
+    padding:0;
+}
+
+
 

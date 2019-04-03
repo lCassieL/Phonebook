@@ -19,3 +19,25 @@ function addEmailField(){
     var emails = document.getElementById('emails');
     emails.insertBefore(newEmailField, delEmail);
 }
+
+function displayInform(link,number){
+    // if(document.getElementsByClassName('c'+number)[0].style.display == "grid"){
+    //     document.getElementsByClassName('c'+number)[0].style.display = "none";
+    //     link.innerHTML = 'View details';    
+       
+    // } else{
+    //     document.getElementsByClassName('c'+number)[0].style.display = "grid";
+    //     link.innerHTML = 'Hide details';
+         
+    // }
+    var details = document.getElementsByClassName('c'+number)[0];
+    if(details.classList.contains('userInformDisplayNone')){
+        details.classList.remove('userInformDisplayNone');
+        details.classList.add('userInform');
+        link.innerHtml = 'View details';
+    } else{
+        details.classList.remove('userInform');
+        details.classList.add('userInformDisplayNone');
+        link.innerHtml = 'Hide details';
+    }
+}
