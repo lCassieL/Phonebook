@@ -13,39 +13,46 @@
 </nav>
 <div class="content">
     <form method="post" class="mycontact">
-        <input type="hidden" name="id" value="<?= $this->contact[0]['id']?>">
-        <div>
-        <label>CONTACT</label>
-        <div>
-            <label>First name</label>
-            <input type="text" name="name" value="<?= $this->contact[0]['name']?>">
-        </div>
-        <div>
-            <label>Last name</label>
-            <input type="text" name="l_name" value="<?= $this->contact[0]['surname']?>">
-        </div>
-        <div>
-            <label>Address</label>
-            <input type="text" name="address" value="<?= $this->contact[0]['address']?>">
-        </div>
-        <div>
-            <label>ZIP City</label>
-            <input type="text" name="city" value="<?= $this->contact[0]['city']?>">
+        <div class="mycontactData">
+            <input type="hidden" name="id" value="<?= $this->contact[0]['id']?>">
+            <label class="orange">CONTACT</label>
+            <div>
+                <label>First name *</label>
+                <input type="text" name="name" value="<?= $this->contact[0]['name']?>">
+            </div>
+
+            <div>
+                <label>Last name *</label>
+                <input type="text" name="l_name" value="<?= $this->contact[0]['surname']?>">
+            </div>
+
+            <div>
+                <label>Address *</label>
+                <input type="text" name="address" value="<?= $this->contact[0]['address']?>">
+            </div>
+
+            <div>
+                <label>ZIP City *</label>
+                <input type="text" name="city" value="<?= $this->contact[0]['city']?>">
+            </div>
+
+            <div>
+                <label>Country</label>
+                <select name="country">
+                <?php foreach($this->countries as $country){ ?>
+                    <option>
+                    <?= $country['name']?>
+                    </option>
+                    <?php }?>
+                </select>
+            </div>
         </div>
 
-        <div>
-            <label>Country</label>
-            <select name="country">
-            <?php foreach($this->countries as $country){ ?>
-            <option>
-                <?= $country['name']?>
-            </option>
-            <?php }?>
-            </select>
-        </div>
-        </div>
-        <div id="phones">        
-            <label>PHONE NUMBERS</label>
+        <div class="myphones">
+            <div>
+                <label class="orange">PHONE NUMBERS</label>
+            </div>        
+            
             <?php
             $pcount=0; 
             foreach($this->phone as $phone_item){ ?>
@@ -70,8 +77,11 @@
             </div>
         </div>
 
-        <div id="emails">
-            <label>EMAILS</label>
+        <div class="myemails">
+            <div>
+                <label class="orange">EMAILS</label>
+            </div>
+        
             <?php 
             $ecount=0;
             foreach($this->email as $email_item){ ?>
@@ -98,8 +108,12 @@
 
         <div>
             <label>* Fields are mandatory</label>
+        </div>
+        <div>
             <input type="checkbox" name="cPub" value="yes" checked>
             <label>Publish my contact</label>
+        </div>
+        <div>
             <input type="hidden" name="action" value="save">
             <input type="submit" value="save">
         </div>

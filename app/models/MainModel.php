@@ -60,6 +60,18 @@ class MainModel extends Model{
         }
     }
 
+    public function getContactAjax($id){
+        if($this->db->connect_errno === 0){
+            $query = 'select *, countries.name as country from contacts left outer join countries on contacts.country_id = countries.id where contacts.id ='.$id;
+            $res = $this->db->query($query);
+            if($res){
+                return $res->fetch_all(MYSQLI_ASSOC);
+            } else{
+                return false;
+            }
+        }
+    }
+
     public function getContact($id){
         if($this->db->connect_errno === 0){
             $query = 'select * from contacts where contacts.id ='.$id;

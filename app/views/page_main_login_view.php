@@ -7,13 +7,20 @@
     </ul>
 </nav>
 <div class="content">
-<form method="post">
-    <label>USERNAME</label>
-    <input type="text" name="login">
-    <label>PASSWORD</label>
-    <input type="password" name="password">
-    <input type="hidden" name="action" value="login">
-    <input type="submit" value="LOGIN">
+<form method="post" class="loginForm">
+    <div>
+        <label>USERNAME</label>
+        <input type="text" name="login">
+    </div>
+
+    <div>
+        <label>PASSWORD</label>
+        <input type="password" name="password">
+    </div>
+    <div>
+        <input type="hidden" name="action" value="login">
+        <input type="submit" value="LOGIN">
+    </div>
 </form>    
 </div>
 </div>

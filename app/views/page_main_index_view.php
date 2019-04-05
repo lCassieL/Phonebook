@@ -30,33 +30,10 @@
     ?>
         <div class="userFullName">
             <h2><?= $contact['name'].' '.$contact['surname']?></h2>
-            <a href="#" onclick="displayInform(this,<?= $ccount ?>)">View details</a>
+            <a href="#" onclick="displayInform(this,<?= $ccount ?>,<?= $contact['id']?>)">View details</a>
         </div>
         <div class="userInformDisplayNone c<?= $ccount?>">
-            <div class="address">
-                <h5>ADDRESS</h5>
-                <div><?= $contact['address'] ?></div>
-                <div><?= $contact['city'] ?></div>
-                <div><?= $contact['country'] ?></div>
-            </div>
-
-            <div class="phones">
-                <h5>PHONE NUMBERS</h5>
-                <?php foreach($this->phones as $phone){
-                    if($contact['id'] == $phone['contact_id']){ ?>
-                        <div><?= $phone['phone'] ?></div>
-                    <?php } ?>
-                <?php } ?>
-            </div>
-
-            <div class="emails">
-                <h5>EMAILS</h5>
-                <?php foreach($this->emails as $email){
-                    if($contact['id'] == $email['contact_id']){ ?>
-                        <div><?= $email['email'] ?></div>
-                    <?php } ?>
-                <?php } ?>
-            </div>
+            
         </div>    
     <?php
     $ccount++;

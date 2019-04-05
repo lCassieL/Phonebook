@@ -52,10 +52,14 @@ class MainController extends Controller{
                 $emails = [];
                 foreach($_POST as $key=>$value){
                     if($key[0] == 'p'){
-                        $phones += array($key => $value);
+                        if($value){
+                            $phones += array($key => $value);
+                        }
                     }
                     if($key[0] == 'e'){
-                        $emails += array($key => $value);
+                        if($value){
+                            $emails += array($key => $value);
+                        }
                     }
                 }
 
@@ -114,5 +118,25 @@ class MainController extends Controller{
             $this->view->render();
         
     }
+    
+
+    public function action_ajaxInf(){
+        $id = filter_input(INPUT_POST, 'id');
+        $this->model = new MainModel();
+        
+        $phone = $this->model->getPhone($id);
+        $email = $this->model->getEmail($id);
+        $contact = $this->model->getContactAjax($id);
+        $answer = [];
+        array_push($answer,$contact);
+        array_push($answer,$email);
+        array_push($answer,$phone);
+        
+        $json = json_encode($answer);
+        header('Content-type: application/json; charset=utf-8');
+        echo $json;
+    }
+
+    
 
 }
