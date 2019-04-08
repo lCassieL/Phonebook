@@ -22,7 +22,7 @@
         <input type="submit" value="LOGIN">
     </div>
 </form>
-<p><?= $this->error ?></p>
+<p class="error"><?= $this->error ?></p>
     
 </div>
 </div>

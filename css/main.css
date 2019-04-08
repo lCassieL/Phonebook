@@ -169,3 +169,7 @@ header form input{
     display: grid;
     grid-template-rows: 1fr 1fr; 
 }
+
+.error{
+    color: red;
+}

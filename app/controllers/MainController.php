@@ -31,13 +31,18 @@ class MainController extends Controller{
                         if($user['login'] === $login && $user['password'] === $password){
                             $_SESSION['login'] = $user['login'];
                             $_SESSION['id'] = $user['contact_id'];
+                            $this->view->error = '';
                             break;
                         }
                     }
-                    header('Location: ' . '/main/mycontact');
+                    if(!$_SESSION['login']){
+                        $this->view->error = 'Wrong login or password';
+                    } else{
+                        header('Location: ' . '/main/mycontact');
+                    }
+                } else{
+                    $this->view->error = 'Wrong login or password';
                 } 
-                $this->view->error = 'Wrong login or password';
-                
             }
         } else if($_SESSION['login']){
             header('Location: ' . '/main/mycontact');
