@@ -24,16 +24,20 @@ class MainController extends Controller{
             if($action === 'login'){
                 $login = filter_input(INPUT_POST, 'login');
                 $password = filter_input(INPUT_POST, 'password');
-                $this->model = new MainModel();
-                $users = $this->model->getUsers();
-                foreach($users as $user){
-                    if($user['login'] === $login && $user['password'] === $password){
-                        $_SESSION['login'] = $user['login'];
-                        $_SESSION['id'] = $user['contact_id'];
-                        break;
+                if($login && $password){
+                    $this->model = new MainModel();
+                    $users = $this->model->getUsers();
+                    foreach($users as $user){
+                        if($user['login'] === $login && $user['password'] === $password){
+                            $_SESSION['login'] = $user['login'];
+                            $_SESSION['id'] = $user['contact_id'];
+                            break;
+                        }
                     }
-                }
-                header('Location: ' . '/main/mycontact');
+                    header('Location: ' . '/main/mycontact');
+                } 
+                $this->view->error = 'Wrong login or password';
+                
             }
         } else if($_SESSION['login']){
             header('Location: ' . '/main/mycontact');

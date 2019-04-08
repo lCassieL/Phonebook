@@ -10,17 +10,19 @@
 <form method="post" class="loginForm">
     <div>
         <label>USERNAME</label>
-        <input type="text" name="login">
+        <input type="text" name="login" required>
     </div>
 
     <div>
         <label>PASSWORD</label>
-        <input type="password" name="password">
+        <input type="password" name="password" required>
     </div>
     <div>
         <input type="hidden" name="action" value="login">
         <input type="submit" value="LOGIN">
     </div>
-</form>    
+</form>
+<p><?= $this->error ?></p>
+    
 </div>
 </div>
