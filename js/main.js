@@ -3,7 +3,7 @@ function addPhoneField(){
     var delPhone = document.getElementById('disablePhone');    
     var newPhoneField = document.createElement('div');
     newPhoneField.innerHTML = "<input type='checkbox' name='_pubp"+pcount.value+"' value='yes'>"+
-    "<input type='text' name='p"+pcount.value+"'>";
+    "<input type='tel' name='p"+pcount.value+"' pattern='[\+][0-9]{12}'>";
     pcount.value++;
     var phones = document.getElementsByClassName('myphones')[0];
     phones.insertBefore(newPhoneField, delPhone);
@@ -14,7 +14,7 @@ function addEmailField(){
     var delEmail = document.getElementById('disableEmail');    
     var newEmailField = document.createElement('div');
     newEmailField.innerHTML = "<input type='checkbox' name='_pube"+ecount.value+"' value='yes'>"+
-    "<input type='text' name='e"+ecount.value+"'>";
+    "<input type='email' name='e"+ecount.value+"' pattern='^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'>";
     ecount.value++;
     var emails = document.getElementsByClassName('myemails')[0];
     emails.insertBefore(newEmailField, delEmail);

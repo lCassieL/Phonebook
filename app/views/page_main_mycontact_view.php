@@ -62,14 +62,14 @@
                 <?php } else{ ?>
                 <input type="checkbox" name="_pubp<?= $pcount ?>" value="yes">
                 <?php }?>
-                <input type="text" name="p<?= $pcount?>" value="<?= $phone_item['phone'] ?>">
+                <input type="tel" name="p<?= $pcount?>" value="<?= $phone_item['phone'] ?>" pattern="[\+][0-9]{12}">
             </div>
             <?php
             $pcount++; 
             }?>
             <div id="disablePhone">
                 <input type="checkbox"  disabled>
-                <input type="text" name="phone" disabled>
+                <input type="tel" name="phone" disabled>
                 <input type="hidden" id="pcount" value="<?= $pcount++?>">
             </div>
             <div>
@@ -91,7 +91,7 @@
                 <?php } else{ ?>
                 <input type="checkbox" name="_pube<?= $ecount ?>" value="yes">
                 <?php }?>
-                <input type="text" name="e<?= $ecount?>" value="<?= $email_item['email'] ?>">
+                <input type="email" name="e<?= $ecount?>" value="<?= $email_item['email'] ?>" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
             </div>
             <?php 
             $ecount++;
