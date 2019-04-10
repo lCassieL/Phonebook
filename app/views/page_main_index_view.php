@@ -9,12 +9,12 @@
 <div class="container">
 <nav>
     <ul>
-        <li><a href="/main/index" class="activeButton">Public phonebook</a></li>
+        <li><a href="#" class="activeButton mainIndex" id="lol">Public phonebook</a></li>
         <li>
             <?php if(!$_SESSION['login']){ ?>
-            <a href="/main/login" class="usualButton">Login</a>
+            <a href="#" class="usualButton mainLogin">Login</a>
             <?php } else{ ?>
-            <a href="/main/mycontact" class="usualButton">My contact</a>
+            <a href="#" class="usualButton mainContact">My contact</a>
             <?php } ?>
         </li>
     </ul>

@@ -7,8 +7,8 @@
 <div class="container">
 <nav>
     <ul>
-        <li><a href="/main/index" class="usualButton">Public phonebook</a></li>
-        <li><a href="/main/mycontact" class="activeButton">My contact</a></li>
+        <li><a href="#" class="usualButton mainIndex">Public phonebook</a></li>
+        <li><a href="#" class="activeButton mainContact">My contact</a></li>
     </ul>
 </nav>
 <div class="content">

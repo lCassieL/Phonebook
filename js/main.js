@@ -1,3 +1,27 @@
+var mainIndex = document.getElementsByClassName('mainIndex');
+var mainLogin = document.getElementsByClassName('mainLogin');
+var mainContact = document.getElementsByClassName('mainContact');
+mainIndex[0].onclick = function(){
+    alert('mainIndex');
+};
+mainLogin[0].onclick = function(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', location.origin + '/main/login');
+    xhr.onreadystatechange = function () {
+        // if (xhr.readyState === 4 && xhr.status === 200) {
+        //     var json = xhr.responseText;
+        //     var articles = JSON.parse(json);
+        //     if (articles) {
+        //         showArticles(articles);
+        //     }
+        // }
+    };
+    xhr.send();
+};
+// mainContact[0].onclick = function(){
+//     alert('mainContact');
+// };
+
 function addPhoneField(){
     var pcount = document.getElementById('pcount');
     var delPhone = document.getElementById('disablePhone');    

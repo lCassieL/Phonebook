@@ -2,8 +2,8 @@
 <div class="container">
 <nav>
     <ul>
-        <li><a href="/main/index" class="usualButton">Public phonebook</a></li>
-        <li><a href="/main/login" class="activeButton">Login</a></li>
+        <li><a href="#" class="usualButton mainIndex">Public phonebook</a></li>
+        <li><a href="#" class="activeButton mainLogin">Login</a></li>
     </ul>
 </nav>
 <div class="content">
