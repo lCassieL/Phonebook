@@ -1,6 +1,9 @@
 var mainIndex = document.getElementsByClassName('mainIndex');
 var mainLogin = document.getElementsByClassName('mainLogin');
 var mainContact = document.getElementsByClassName('mainContact');
+console.log(mainIndex[0]);
+console.log(mainLogin[0]);
+console.log(mainContact[0]);
 mainIndex[0].onclick = function(){
     alert('mainIndex');
 };
